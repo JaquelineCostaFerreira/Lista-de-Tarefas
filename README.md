@@ -1,129 +1,35 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lista de Tarefas</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f0f0f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
+📝 Lista de Tarefas (To-Do List)
 
-    .todo-container {
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 400px;
-    }
+Este é um projeto simples de Lista de Tarefas, desenvolvido com HTML, CSS e JavaScript puro (sem bibliotecas externas). 
+Ele permite que o usuário adicione, marque como concluída e remova tarefas do dia a dia de forma prática.
 
-    h1 {
-      text-align: center;
-      color: #333;
-    }
+🚀 Funcionalidades
+✅ Adicionar novas tarefas
 
-    .input-group {
-      display: flex;
-      margin-bottom: 20px;
-    }
+✅ Marcar/desmarcar tarefas como concluídas
 
-    input[type="text"] {
-      flex: 1;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 8px 0 0 8px;
-    }
+✅ Remover tarefas da lista
 
-    button {
-      padding: 10px 15px;
-      border: none;
-      background: #4caf50;
-      color: white;
-      border-radius: 0 8px 8px 0;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+✅ Interface limpa e responsiva
 
-    button:hover {
-      background: #45a049;
-    }
+💻 Tecnologias Utilizadas
+HTML5
 
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
+CSS3
 
-    li {
-      background: #f8f8f8;
-      padding: 10px;
-      border-radius: 6px;
-      margin-bottom: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: 0.3s;
-    }
+JavaScript 
 
-    li.completed {
-      text-decoration: line-through;
-      color: #555454;
-    }
+📷 Preview
+📁 Como usar
 
-    .delete-btn {
-      background: #f33a25;
-      border: none;
-      color: white;
-      padding: 6px 10px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
+Clone o repositório:
 
-    .delete-btn:hover {
-      background: #f33a25;
-    }
-  </style>
-</head>
-<body>
-  <div class="todo-container">
-    <h1>Lista de Tarefas</h1>
-    <div class="input-group">
-      <input type="text" id="taskInput" placeholder="Digite uma tarefa" />
-      <button onclick="addTask()">Adicionar</button>
-    </div>
-    <ul id="taskList"></ul>
-  </div>
+Copiar
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
 
-  <script>
-    function addTask() {
-      const taskInput = document.getElementById("taskInput");
-      const taskText = taskInput.value.trim();
+Acesse a pasta do projeto e abra o arquivo index.html no navegador.
 
-      if (taskText === "") return;
+🎯 Objetivo
 
-      const li = document.createElement("li");
-      li.innerHTML = `
-        <span onclick="toggleTask(this)">${taskText}</span>
-        <button class="delete-btn" onclick="deleteTask(this)">Excluir</button>
-      `;
+Este projeto foi criado como parte do meu portfólio de estudos na área de Tecnologia da Informação. Ele tem como objetivo colocar em prática conceitos básicos de desenvolvimento web, como manipulação de DOM, eventos e estruturação de interface.
 
-      document.getElementById("taskList").appendChild(li);
-      taskInput.value = "";
-    }
-
-    function toggleTask(element) {
-      element.parentElement.classList.toggle("completed");
-    }
-
-    function deleteTask(button) {
-      button.parentElement.remove();
-    }
-  </script>
-</body>
-</html>
